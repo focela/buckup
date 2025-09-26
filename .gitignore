@@ -1,0 +1,180 @@
+#-----------------------------------------------------------------------------
+# Git Ignore Configuration
+#
+# Purpose: Prevents accidental commits of system files, build artifacts,
+# and sensitive data that would bloat repository and expose secrets.
+# Assumption: Team uses mixed OS environments and various IDEs.
+# Consequence: Without this, repository becomes cluttered with OS files,
+# build outputs, and potentially sensitive configuration files.
+#-----------------------------------------------------------------------------
+
+
+
+#-----------------------------------------------------------------------------
+# OPERATING SYSTEM FILES
+#-----------------------------------------------------------------------------
+# Linux
+*~
+.fuse_hidden*
+.directory
+.Trash-*
+.nfs*
+
+# macOS system files that auto-generate and clutter repository
+.apdisk
+._*
+.AppleDB
+.AppleDesktop
+.AppleDouble
+.com.apple.timemachine.donotpresent
+.DS_Store
+.DocumentRevisions-V100
+.fseventsd
+.LSOverride
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+Icon
+Network Trash Folder
+Temporary Items
+
+# Windows system files
+$RECYCLE.BIN/
+Desktop.ini
+ehthumbs.db
+Thumbs.db
+
+#-----------------------------------------------------------------------------
+# IDE AND EDITOR FILES
+#-----------------------------------------------------------------------------
+# Atom
+.ftpconfig
+.sftpconfig
+
+# Emacs
+\#*\#
+/.emacs.desktop
+/.emacs.desktop.lock
+*.elc
+auto-save-list
+tramp
+.\#*
+
+# IntelliJ IDEA / JetBrains IDEs
+.idea/
+.idea_modules/
+.idea/$CACHE_FILE$
+.idea/**/aws.xml
+.idea/**/azureSettings.xml
+.idea/**/codestream.xml
+.idea/**/contentModel.xml
+.idea/**/dbnavigator.xml
+.idea/**/dictionaries
+.idea/**/dynamic.xml
+.idea/**/gradle.xml
+.idea/**/httpRequests
+.idea/**/libraries
+.idea/**/markdown-navigator/
+.idea/**/mongoSettings.xml
+.idea/**/shelf
+.idea/**/sonarIssues.xml
+.idea/**/sonarlint/
+.idea/**/sqlDataSources.xml
+.idea/**/tasks.xml
+.idea/**/uiDesigner.xml
+.idea/**/usage.statistics.xml
+.idea/**/workspace.xml
+.idea/caches/build_file_checksums.ser
+.idea/misc.xml
+.idea/replstate.xml
+*.iml
+*.ipr
+*.iws
+.history/
+modules.xml
+out/
+
+# Sublime Text
+*.sublime-project
+*.sublime-workspace
+
+# Vim/Neovim
+.netrwhist
+Session.vim
+
+# VS Code
+.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+#-----------------------------------------------------------------------------
+# THIRD-PARTY PLUGIN FILES
+#-----------------------------------------------------------------------------
+# Third-party tool configs that may contain API keys or user preferences
+atlassian-ide-plugin.xml
+com_crashlytics_export_strings.xml
+crashlytics-build.properties
+crashlytics.properties
+fabric.properties
+
+#-----------------------------------------------------------------------------
+# SECURITY AND CONFIGURATION
+#-----------------------------------------------------------------------------
+# Files containing secrets that must never be committed to version control
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+.well-known/
+
+#-----------------------------------------------------------------------------
+# LOGS AND TEMPORARY FILES
+#-----------------------------------------------------------------------------
+# Runtime files that grow large and change frequently
+*.log
+*.tmp
+*.temp
+*.backup
+*.bak
+*.orig
+*.rej
+*.swp
+*.swo
+*~
+logs/
+.cache/
+
+#-----------------------------------------------------------------------------
+# CONTAINER AND ORCHESTRATION
+#-----------------------------------------------------------------------------
+# Container orchestration configs that may contain sensitive cluster info
+.kube/
+Dockerfile.dev
+docker-compose.dev.yml
+docker-compose.override.yml
+
+#-----------------------------------------------------------------------------
+# CACHE AND BUILD ARTIFACTS
+#-----------------------------------------------------------------------------
+# Cache directories and build outputs that can be regenerated
+build/
+dist/
+target/
+node_modules/
+.npm/
+.yarn/
+
+#-----------------------------------------------------------------------------
+# TERRAFORM
+#-----------------------------------------------------------------------------
+# Terraform state files and lock files
+.terraform/
+.terraform.lock.hcl
+.terraformrc
+terraform.rc
+*.tfstate
+*.tfstate.*
