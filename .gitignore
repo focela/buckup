@@ -1,0 +1,438 @@
+#-----------------------------------------------------------------------------
+# Git Ignore Configuration
+#
+# Function: Excludes system files, build artifacts, and sensitive data
+# Assumption: Mixed OS environments and multiple IDEs in use
+# Consequence: Prevents repository bloat and accidental secret exposure
+#-----------------------------------------------------------------------------
+
+
+
+#-----------------------------------------------------------------------------
+# OPERATING SYSTEM FILES
+#-----------------------------------------------------------------------------
+# macOS system files that auto-generate during file operations
+._*
+.apdisk
+.AppleDB    
+.AppleDesktop
+.AppleDouble
+.com.apple.timemachine.donotpresent
+.DocumentRevisions-V100
+.DS_Store
+.fseventsd
+.LSOverride
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+Icon
+Network Trash Folder
+Temporary Items
+
+# Windows thumbnail cache files
+$RECYCLE.BIN/
+Desktop.ini
+ehthumbs.db
+Thumbs.db
+
+# Linux temporary files
+*~
+.directory
+.fuse_hidden*
+.nfs*
+.Trash-*
+
+#-----------------------------------------------------------------------------
+# IDE AND EDITOR FILES
+#-----------------------------------------------------------------------------
+# Atom editor configuration files
+.ftpconfig
+.sftpconfig
+
+# Emacs editor temporary and backup files
+*.elc
+.\#*
+/.emacs.desktop
+/.emacs.desktop.lock
+\#*\#
+auto-save-list
+tramp
+
+# IntelliJ IDEA and JetBrains IDE configuration files
+*.iml
+*.ipr
+*.iws
+.history/
+.idea/
+.idea/$CACHE_FILE$
+.idea/**/aws.xml
+.idea/**/azureSettings.xml
+.idea/**/codestream.xml
+.idea/**/contentModel.xml
+.idea/**/dbnavigator.xml
+.idea/**/dictionaries
+.idea/**/dynamic.xml
+.idea/**/gradle.xml
+.idea/**/httpRequests
+.idea/**/libraries
+.idea/**/markdown-navigator/
+.idea/**/mongoSettings.xml
+.idea/**/shelf
+.idea/**/sonarIssues.xml
+.idea/**/sonarlint/
+.idea/**/sqlDataSources.xml
+.idea/**/tasks.xml
+.idea/**/uiDesigner.xml
+.idea/**/usage.statistics.xml
+.idea/**/workspace.xml
+.idea/caches/build_file_checksums.ser
+.idea/misc.xml
+.idea/replstate.xml
+.idea_modules/
+modules.xml
+out/
+
+# PhpStorm metadata and configuration files
+.phpstorm.meta.php
+.phpstorm.meta.php/
+
+# Sublime Text project and workspace files
+*.sublime-project
+*.sublime-workspace
+
+# Vim and Neovim session and history files
+.netrwhist
+.viminfo
+Session.vim
+Sessionx.vim
+
+# VS Code configs with selective inclusion
+!.vscode/extensions.json
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/tasks.json
+.vscode/
+
+# Nano editor
+.nano_history
+
+# Eclipse IDE
+.autotools
+.buildpath
+.cproject
+.externalToolBuilders/
+.factorypath
+.loadpath
+.metadata
+.project
+.recommenders
+.recommenders/
+.settings/
+.springBeans
+.target
+.tern-project
+.texlipse
+local.properties
+
+# NetBeans IDE
+.nb-gradle/
+nbbuild/
+nbdist/
+nbproject/private/
+
+#-----------------------------------------------------------------------------
+# THIRD-PARTY PLUGIN FILES
+#-----------------------------------------------------------------------------
+# Third-party tool configs that may contain API keys or preferences
+atlassian-ide-plugin.xml
+com_crashlytics_export_strings.xml
+crashlytics-build.properties
+crashlytics.properties
+fabric.properties
+
+# SonarQube analysis files
+.scannerwork/
+.sonar/
+
+# Sentry configuration files
+.sentryclirc
+
+#-----------------------------------------------------------------------------
+# SECURITY AND CONFIGURATION
+#-----------------------------------------------------------------------------
+# Environment files with sensitive data
+.env
+.env.*.local
+.env.development
+.env.local
+.env.production
+.env.staging
+
+# Files containing secrets that must not be committed
+*.crt
+*.jks
+*.key
+*.keystore
+*.mobileprovision
+*.p8
+*.p12
+*.pem
+*.pfx
+.well-known/
+credentials/
+secrets/
+
+# SSH keys
+*.pub
+id_dsa
+id_ecdsa
+id_ed25519
+id_rsa
+
+# GPG keys
+*.asc
+*.gpg
+*.sig
+
+# API keys and tokens
+*_key
+*_token
+.api_key
+.token
+auth_token
+
+#-----------------------------------------------------------------------------
+# LOGS AND TEMPORARY FILES
+#-----------------------------------------------------------------------------
+# Runtime files that grow large and change frequently
+*.log
+*.temp
+*.tmp
+log/
+logs/
+
+#-----------------------------------------------------------------------------
+# CONTAINER AND ORCHESTRATION
+#-----------------------------------------------------------------------------
+# Container configs that may contain sensitive cluster information
+.kube/
+
+# Docker development configuration files
+docker-compose.override.yml
+Dockerfile.dev
+
+# Terraform infrastructure configuration and state files
+*.tfstate
+*.tfstate.*
+.terraform.lock.hcl
+.terraform/
+.terraformrc
+terraform.rc
+
+# Ansible configuration files
+*.vault
+.vault_pass
+ansible.cfg
+
+# Vagrant
+.vagrant/
+Vagrantfile.local
+
+# Helm charts
+charts/*.tgz
+
+# CI/CD artifacts (be careful with .github/ - usually should not be ignored)
+.buildkite/local/
+.circleci/local/
+.drone.local.yml
+.gitlab-ci.yml.local
+.jenkins/local/
+.travis.yml.local
+azure-pipelines.local.yml
+buildspec.local.yml
+
+#-----------------------------------------------------------------------------
+# BUILD ARTIFACTS AND RUNTIME FILES
+#-----------------------------------------------------------------------------
+# Version control and patch files
+*.old
+*.orig
+
+# Archive files that might be created during backup operations
+*.7z
+*.bz2
+*.gz
+*.iso
+*.jar
+*.lz
+*.lzma
+*.rar
+*.tar
+*.tar.bz2
+*.tar.gz
+*.tar.lz
+*.tar.xz
+*.tbz2
+*.tgz
+*.tlz
+*.txz
+*.xz
+*.Z
+*.zip
+
+# Executable and binary files
+*.app
+*.deb
+*.dmg
+*.exe
+*.img
+*.msi
+*.pkg
+*.rpm
+
+# Virtual machine crash logs and replay files
+hs_err_pid*
+replay_pid*
+
+#-----------------------------------------------------------------------------
+# DATABASE FILES
+#-----------------------------------------------------------------------------
+# Database files
+*.db
+*.sql
+*.sqlite
+*.sqlite3
+
+#-----------------------------------------------------------------------------
+# CACHE AND TEMPORARY FILES  
+#-----------------------------------------------------------------------------
+# General cache directories
+.cache/
+cache/
+temp/
+tmp/
+
+# Temporary files from IDEs and editors
+*.bak
+*.swo
+*.swp
+*.tmp
+*~.nib
+bin/
+build/
+dist/
+
+# OS and application caches
+.com.apple.backupd.exclusions.plist
+.com.apple.backupd.mvlist.plist
+.localized
+
+# Shell history and runtime files
+*.lck
+*.lock
+*.pid
+.bash_history
+.history
+.zsh_history
+
+#-----------------------------------------------------------------------------
+# BACKUP AND SYNC FILES
+#-----------------------------------------------------------------------------
+# Local backup files and directories
+*_backup
+*_backup.*
+backup/
+backup_*
+backups/
+
+# Sync and file transfer temporary files
+*.!sync
+*.!ut
+*.part
+*.partial
+.sync/
+.syncthing*
+
+# rsync temporary files
+.rsync_tmp/
+.~tmp~/
+
+#-----------------------------------------------------------------------------
+# DEPENDENCIES AND ENVIRONMENTS
+#-----------------------------------------------------------------------------
+# Package manager dependencies
+bower_components/
+node_modules/
+vendor/
+
+# Package manager caches
+.npm/
+.npmrc.local
+.pnpm-store/
+.pnpm/
+.yarn/
+package-lock.json.bak
+yarn-error.log
+
+# Virtual environments
+.env/
+.venv/
+env/
+venv/
+
+#-----------------------------------------------------------------------------
+# CLOUD PLATFORM CONFIGURATIONS
+#-----------------------------------------------------------------------------
+# AWS (local/development configurations)
+.aws/config.local
+.aws/credentials.local
+
+# Google Cloud Platform
+.gcp/
+application_default_credentials.json
+gcloud/
+
+# Microsoft Azure
+.azure/
+.azureauth/
+
+# Heroku
+.heroku/
+Procfile.local
+
+#-----------------------------------------------------------------------------
+# TESTING AND COVERAGE
+#-----------------------------------------------------------------------------
+# Test results and coverage reports
+*.lcov
+.coverage
+.coverage.*
+.hypothesis/
+.nyc_output
+.pytest_cache/
+.testmondata
+.tox/
+coverage/
+htmlcov/
+junit.xml
+test-report.xml
+test-results/
+
+# Jest (JavaScript testing)
+coverage-final.json
+jest_html_reporters.html
+
+# Playwright (E2E testing)
+/playwright-report/
+/playwright/.cache/
+/test-results/
+
+# Cypress (E2E testing)
+cypress/downloads/
+cypress/screenshots/
+cypress/videos/
+
+# Storybook build outputs
+.out/
+storybook-static/
