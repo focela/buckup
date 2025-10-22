@@ -435,4 +435,4 @@ cypress/videos/
 
 # Storybook build outputs
 .out/
-storybook-static/
+storybook-static/1
